@@ -9,12 +9,18 @@ This is a LoRaWAN enabled smart parking solution that allows real-time detection
 
 The LoRaWAN smart-parking solution used an Arduino based sensor node, a multi-tech LoRa Gateway, a Loriot.io LoRa Server, a Pubnub Server, and an IBM Bluemix to host the Parking application server. The following are the detailed steps of how the application works:
 
-1-	The Arduino board detects the status of the parking spot by using an HC-SR04 ultrasonic sensors. 
-2-	The status data is sent to the Multi-Tech LoRa gateway via a Multi-Tech mDot LoRa module connected to the Arduino board via serial connection.
-3-	The LoRa gateway is connected to a LoRa server on Loriot.io and forwards all packets it receives there
-4-	The Loriot server forwards the received packages to a PubNub channel that the Application server is listening on
-5-	The Application Server hosted on IBM Bluemix listens to the PubNub channel and detects the status data of each parking spot.
-6-	After comparing the parking spot status data with the stored value, the parking application makes the decision of whether or not to send a notice message to the mobile app to update the status of a parking spot
+1- The Arduino board detects the status of the parking spot by using an HC-SR04 ultrasonic sensors. 
+
+2- The status data is sent to the Multi-Tech LoRa gateway via a Multi-Tech mDot LoRa module connected to the Arduino board via serial connection.
+
+3- The LoRa gateway is connected to a LoRa server on Loriot.io and forwards all packets it receives there
+
+4- The Loriot server forwards the received packages to a PubNub channel that the Application server is listening on
+
+5- The Application Server hosted on IBM Bluemix listens to the PubNub channel and detects the status data of each parking spot.
+
+6- After comparing the parking spot status data with the stored value, the parking application makes the decision of whether or not to send a notice message to the mobile app to update the status of a parking spot
+
 
 
 ## BUILD AND INSTALL
@@ -27,14 +33,19 @@ For hosting the Parking Management Server on IBM Bluemix, follow the steps as gi
 
 
 1. Signup to create your trial [IBM Bluemix account](https://developer.ibm.com/bluemix/#gettingstarted).
+
  
 3. Follow the [Bluemix Documentation](https://www.ng.bluemix.net/docs/) to create your bluemix container 
 
+
 4. Install the [PubNub service](https://www.pubnub.com/blog/2015-09-09-getting-started-pubnub-ibm-bluemix/) and attach it to your container.
+
  
 5. Install and initialize the buildpacks for [python application runtime](https://www.ng.bluemix.net/docs/starters/python/index.html) 
 
+
 6. Deploy the application server package under ""parking-meter" folder, on your Bluemix container and start the application from Bluemix console.
+
 
 
 
